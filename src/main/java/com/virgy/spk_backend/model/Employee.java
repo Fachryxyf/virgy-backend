@@ -17,9 +17,15 @@ public class Employee {
     private int kedisiplinan;
     private double perilaku;
 
-    @Lob // Menandakan "Large Object", cocok untuk kolom tipe TEXT seperti base64 image
-    @Column(columnDefinition = "TEXT") // Eksplisit mendefinisikan tipe kolom
+    @Lob
+    @Column(columnDefinition = "TEXT")
     private String photo;
+
+    public Employee() {
+        // Ini adalah penanda kita. Pesan ini akan tercetak di log
+        // untuk setiap baris data karyawan yang dibaca dari database.
+        System.out.println(">>> KONSTRUKTOR EMPLOYEE.JAVA VERSI BARU (DENGAN STRING PHOTO) DIPANGGIL <<<");
+    }
 
     // Getters and Setters (bisa di-generate otomatis oleh IDE)
     public Long getId() {
